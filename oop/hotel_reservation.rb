@@ -12,6 +12,10 @@ class HotelReservation
     @amenities = []
   end
 
+  def room_number=(room_number)
+    @room_number = room_number  
+  end
+
   def add_a_fridge
     @amenities << "fridge"
   end
@@ -25,6 +29,22 @@ class HotelReservation
   end
 end
 
+
+reservation = HotelReservation.new(     #created reservation
+                                  customer_name: "Billy Bob",
+                                  date: "01/21/2017",
+                                  room_number: "22",
+                                  ) 
+
+
+p reservation
+reservation.room_number=("32")      #changing room number even after reservation
+reservation.add_a_fridge            #testing add_a_fridge_method
+reservation.add_a_crib              #testing add_a_crib method
+reservation.add_a_custom_amenity("tv")  #testing add_a_customer_amenity
+reservation.add_a_custom_amenity("ice-maker") #testing add_a_customer_amenity
+
+p reservation
 
 # Write your own driver code below! Make sure your code tests the following:
 # The ability to change a room number even after a reservation has already been created
